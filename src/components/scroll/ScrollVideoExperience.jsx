@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./scroll-video.css";
 
-const VIDEO_SRC = "/videos/hi-fi-diagnostic-scroll-01.mp4";
+// const VIDEO_SRC = "/videos/hi-fi-diagnostic-scroll-01.mp4";
+const VIDEO_SRC = "https://pub-0041017a9f364df0955018fc3ffe74bd.r2.dev/hi-fi-diagnostic-journey-01.mp4";
 
 const STAGES = [
   {
