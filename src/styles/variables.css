@@ -1,0 +1,59 @@
+:root {
+  /* Primary medical colors */
+  --color-primary: #0756a4;
+  --color-primary-dark: #073568;
+  --color-primary-light: #eaf5ff;
+  --color-cyan: #31bceb;
+
+  /* Background colors */
+  --color-background: #f7fafe;
+  --color-white: #ffffff;
+  --color-surface: #f0f7fd;
+
+  /* Text colors */
+  --color-text: #152b43;
+  --color-text-secondary: #64748b;
+  --color-border: #e2eaf2;
+
+  /* Typography */
+  --font-primary: "Inter", sans-serif;
+
+  /* Font sizes */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 2rem;
+  --font-4xl: 2.75rem;
+  --font-hero: clamp(2.5rem, 5vw, 4.5rem);
+
+  /* Spacing */
+  --container-width: 1200px;
+  --section-spacing: 100px;
+  --space-xs: 6px;
+  --space-sm: 10px;
+  --space-md: 14px;
+  --space-lg: 20px;
+  --space-xl: 28px;
+  --space-2xl: 44px;
+  --space-3xl: 62px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgb(7 53 104 / 6%);
+  --shadow-md: 0 10px 30px rgb(7 53 104 / 9%);
+  --shadow-lg: 0 20px 50px rgb(7 53 104 / 12%);
+
+  /* Transitions */
+  --transition-normal: 0.3s ease;
+}

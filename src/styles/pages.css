@@ -1,0 +1,412 @@
+/* Home page */
+
+.home-hero {
+  min-height: 620px;
+  padding-block: var(--space-2xl);
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.15fr;
+  align-items: center;
+  gap: var(--space-3xl);
+}
+
+.hero-content h1 {
+  color: var(--color-primary-dark);
+}
+
+.hero-content h1 span {
+  display: block;
+  color: var(--color-primary);
+}
+
+.hero-content p {
+  font-size: var(--font-lg);
+}
+
+/* Company introduction */
+
+.home-intro {
+  text-align: left;
+}
+
+.home-intro-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.home-intro-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: var(--space-xl);
+}
+
+.home-intro-list span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--font-base);
+  color: var(--color-text-secondary);
+}
+
+.home-intro-list span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+}
+
+/* Diagnostic services overview */
+
+.services-overview {
+  text-align: center;
+}
+
+.services-overview .card-grid {
+  margin-top: var(--space-2xl);
+}
+
+/* Why choose Hi-Fi Diagnostic */
+
+.why-choose {
+  text-align: left;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-3xl);
+}
+
+.why-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: var(--space-xl);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.why-item h3 {
+  color: var(--color-primary-dark);
+}
+
+.why-item p {
+  font-size: var(--font-sm);
+}
+
+/* Facilities preview */
+
+.facilities-preview {
+  text-align: left;
+}
+
+.facilities-preview .card-grid {
+  margin-top: var(--space-2xl);
+}
+
+/* Appointment CTA */
+
+.home-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+  text-align: center;
+  padding: var(--space-3xl);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.home-cta h2 {
+  color: var(--color-white);
+}
+
+.home-cta p {
+  color: #c5d8eb;
+  max-width: 560px;
+}
+
+.home-cta .btn {
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+  box-shadow: 0 8px 22px rgb(7 53 104 / 18%);
+}
+
+.home-cta .btn:hover {
+  background: #f5fbff;
+}
+
+/* About page */
+
+.about-hero {
+  min-height: 620px;
+  padding-block: var(--space-2xl);
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.values-grid .card-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.values-grid h3 {
+  margin-bottom: 6px;
+  color: var(--color-primary-dark);
+}
+
+.laboratory-approach {
+  text-align: left;
+}
+
+.laboratory-approach-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.75fr;
+  gap: var(--space-3xl);
+  align-items: center;
+  margin-top: var(--space-3xl);
+}
+
+.laboratory-approach-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: var(--space-xl);
+}
+
+.laboratory-approach-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  background: var(--color-primary-light);
+  border: 1px dashed #a9d4eb;
+  border-radius: var(--radius-xl);
+}
+
+.about-contact-cta {
+  text-align: center;
+}
+
+/* Services page */
+
+.services-hero {
+  min-height: 620px;
+  padding-block: var(--space-2xl);
+}
+
+.service-categories {
+  text-align: center;
+}
+
+.service-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.service-placeholder-card {
+  padding: var(--space-2xl);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.service-placeholder-card-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.sample-collection-info {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.sample-collection-steps {
+  display: grid;
+  gap: var(--space-lg);
+  margin-top: var(--space-3xl);
+}
+
+.sample-collection-step {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.sample-collection-step-number {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  background: var(--color-primary-light);
+}
+
+.sample-collection-steps h3 {
+  color: var(--color-primary-dark);
+}
+
+.test-enquiry-cta {
+  text-align: center;
+  padding: var(--space-3xl);
+  background: var(--color-primary-light);
+  border: 1px solid #d6eaf7;
+  border-radius: var(--radius-xl);
+}
+
+.contact-section {
+  text-align: center;
+}
+
+/* Facilities page */
+
+.facilities-hero {
+  min-height: 620px;
+  padding-block: var(--space-2xl);
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.equipment-card {
+  padding: var(--space-xl);
+  background: var(--color-white);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.equipment-card h3 {
+  margin-bottom: 6px;
+  color: var(--color-primary-dark);
+}
+
+.equipment-card p {
+  font-size: var(--font-sm);
+}
+
+.equipment-card-note {
+  font-size: 11px;
+  margin-top: 10px;
+  color: var(--color-text-secondary);
+}
+
+.sample-processing-steps {
+  display: grid;
+  gap: var(--space-lg);
+  margin-top: var(--space-3xl);
+}
+
+.sample-processing-step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.sample-processing-step-number {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  background: var(--color-primary-light);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.gallery-item {
+  padding: var(--space-xl);
+  background: var(--color-primary-light);
+  border: 1px solid #c5e5fa;
+  border-radius: var(--radius-lg);
+}
+
+.gallery-item h3 {
+  margin-bottom: 4px;
+  color: var(--color-primary-dark);
+  font-size: var(--font-sm);
+}
+
+.facilities-cta {
+  text-align: center;
+}
+
+/* Contact page */
+
+.contact-hero {
+  min-height: 620px;
+  padding-block: var(--space-2xl);
+}
+
+.contact-page-form {
+  margin-top: var(--space-2xl);
+}
+
+.map-placeholder {
+  margin-top: var(--space-3xl);
+  padding: 40px;
+  background: var(--color-white);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.map-placeholder h3 {
+  margin-bottom: 8px;
+  color: var(--color-primary-dark);
+}
+
+.map-placeholder svg {
+  margin: 0 auto 14px;
+  color: var(--color-primary);
+}

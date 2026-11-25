@@ -1,0 +1,422 @@
+
+.scroll-video-track {
+  position: relative;
+  height: 500vh;
+  width: 100%;
+  background: #06182c;
+}
+
+.scroll-video-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 480px;
+  overflow: hidden;
+  background: #06182c;
+  isolation: isolate;
+}
+
+.scroll-video-element {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  background: #06182c;
+}
+
+.scroll-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 19, 38, 0.82) 0%,
+      rgba(3, 19, 38, 0.42) 48%,
+      rgba(3, 19, 38, 0.08) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3, 19, 38, 0.65),
+      transparent 35%
+    );
+  pointer-events: none;
+}
+
+.scroll-video-header {
+  position: absolute;
+  top: 38px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.scroll-video-brand {
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.scroll-video-tag {
+  color: white;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.scroll-video-content {
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  width: min(520px, 80%);
+  transform: translateY(-50%);
+}
+
+.scroll-video-caption {
+  color: white;
+}
+
+.scroll-video-step {
+  color: #70c9ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.scroll-video-caption h2 {
+  margin: 18px 0 12px;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1.08;
+  font-weight: 750;
+}
+
+.scroll-video-caption p {
+  max-width: 440px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(14px, 1.5vw, 19px);
+  line-height: 1.7;
+}
+
+.scroll-video-loading {
+  color: white;
+  font-size: 14px;
+}
+
+.scroll-video-footer {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 35px;
+}
+
+.scroll-video-progress {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.scroll-video-progress-fill {
+  height: 100%;
+  background: #48b9ff;
+  transition: width 0.08s linear;
+}
+
+.scroll-video-footer-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.scroll-video-scroll-hint {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.scroll-video-arrow {
+  font-size: 25px;
+  animation: scrollHint 1.5s infinite;
+}
+
+@keyframes scrollHint {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .scroll-video-header {
+    top: 22px;
+    left: 5%;
+    right: 5%;
+  }
+
+  .scroll-video-brand {
+    font-size: 15px;
+  }
+
+  .scroll-video-tag {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .scroll-video-content {
+    left: 7%;
+    width: 82%;
+  }
+
+  .scroll-video-caption h2 {
+    font-size: clamp(32px, 9vw, 48px);
+  }
+
+  .scroll-video-scroll-hint {
+    right: 5%;
+    top: auto;
+    bottom: 110px;
+  }
+
+  .scroll-video-footer {
+    left: 5%;
+    right: 5%;
+    bottom: 25px;
+  }
+
+  .scroll-video-track {
+  position: relative;
+  height: 500vh;
+  width: 100%;
+  background: #06182c;
+}
+}
+
+/* Keep video, overlay and interface in a predictable layer order */
+/* .scroll-video-element {
+  z-index: 0;
+} */
+
+/* .scroll-video-overlay {
+  z-index: 1;
+} */
+
+.scroll-video-header,
+.scroll-video-content,
+.scroll-video-footer,
+.scroll-video-scroll-hint {
+  z-index: 2;
+}
+
+/* Improved scroll progress indicator */
+.scroll-video-footer {
+  z-index: 10;
+  left: 6%;
+  right: 6%;
+  bottom: 35px;
+}
+
+.scroll-video-progress {
+  width: 100%;
+  height: 7px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.35);
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.scroll-video-progress-fill {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #16a6ff, #65d6ff);
+  transition: width 0.08s linear;
+}
+
+.scroll-video-footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.scroll-video-footer-info span:last-child {
+  color: #65d6ff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.scroll-video-caption {
+  animation: patientStageEnter 0.65s ease both;
+  will-change: opacity, transform;
+}
+
+@keyframes patientStageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-video-caption {
+    animation: none;
+  }
+}
+
+/* =====================================
+   CINEMATIC PATIENT JOURNEY EFFECTS
+===================================== */
+
+/* Subtle cinematic video zoom */
+.scroll-video-element {
+  transform: scale(1.04);
+  filter: saturate(1.08) contrast(1.04);
+}
+
+/* Rich cinematic lighting and contrast */
+.scroll-video-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 13, 29, 0.88) 0%,
+      rgba(3, 19, 38, 0.52) 48%,
+      rgba(3, 19, 38, 0.12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(2, 13, 29, 0.78) 0%,
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 13, 29, 0.35) 0%,
+      transparent 25%
+    );
+}
+
+/* Improve caption readability */
+.scroll-video-caption h2 {
+  color: #ffffff;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.38);
+}
+
+.scroll-video-caption p {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.scroll-video-step {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile zoom adjustment */
+@media (max-width: 768px) {
+  .scroll-video-element {
+    transform: scale(1.02);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-video-element {
+    transform: none;
+    filter: none;
+  }
+
+  .scroll-video-arrow {
+    animation: none;
+  }
+}
+
+
+/* =====================================
+   MOBILE PERFORMANCE OPTIMIZATION
+===================================== */
+
+.scroll-video-sticky {
+  contain: layout paint;
+}
+
+.scroll-video-element {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Mobile-specific optimization */
+@media (max-width: 768px) {
+  .scroll-video-track {
+    height: 400vh;
+    min-height: 400vh;
+  }
+
+  .scroll-video-sticky {
+    height: 100vh;
+    height: 100svh;
+    min-height: 480px;
+  }
+
+  .scroll-video-element {
+    object-position: center center;
+    transform: scale(1.02);
+  }
+
+  .scroll-video-content {
+    width: 84%;
+  }
+
+  .scroll-video-caption h2 {
+    line-height: 1.12;
+  }
+
+  .scroll-video-caption {
+    will-change: opacity, transform;
+  }
+}
+
+/* Reduce visual effects on low-motion devices */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-video-caption {
+    will-change: auto;
+  }
+}

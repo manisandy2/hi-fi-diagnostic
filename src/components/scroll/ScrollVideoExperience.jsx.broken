@@ -1,0 +1,35 @@
+const updateScrollProgress = () => {
+  frameRef.current = null;
+
+  if (disposed) return;
+
+  const rect = section.getBoundingClientRect();
+  const maxScroll = section.offsetHeight - window.innerHeight;
+
+  const nextProgress = maxScroll > 0
+    ? Math.max(0, Math.min(1, -rect.top / maxScroll))
+    : 0;
+
+  console.log("SCROLL UPDATE:", {
+    top: rect.top,
+    progress: nextProgress,
+    videoTime: video.currentTime
+  });
+
+  if (progressFillRef.current) {
+    progressFillRef.current.style.width =
+      `${nextProgress * 100}%`;
+  }
+
+  setProgress(nextProgress);
+
+  if (Number.isFinite(video.duration) && video.duration > 0) {
+    targetTimeRef.current =
+      nextProgress * Math.max(0, video.duration - 0.05);
+
+    console.log("VIDEO TARGET:", targetTimeRef.current);
+
+    seekVideo();
+  }
+};
+
