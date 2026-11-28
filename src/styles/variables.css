@@ -1,3 +1,9 @@
+
+/* =========================================
+   HI-FI DIAGNOSTIC
+   DESIGN SYSTEM VARIABLES
+========================================= */
+
 :root {
   /* Primary medical colors */
   --color-primary: #0756a4;
@@ -29,9 +35,10 @@
   --font-4xl: 2.75rem;
   --font-hero: clamp(2.5rem, 5vw, 4.5rem);
 
-  /* Spacing */
+  /* Layout and spacing */
   --container-width: 1200px;
   --section-spacing: 100px;
+
   --space-xs: 6px;
   --space-sm: 10px;
   --space-md: 14px;

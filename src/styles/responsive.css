@@ -1,3 +1,10 @@
+
+/* =========================================
+   RESPONSIVE DESIGN
+   Hi-Fi Diagnostic
+========================================= */
+
+/* Tablet and smaller desktops */
 @media (max-width: 1023px) {
   :root {
     --section-spacing: 75px;
@@ -11,8 +18,22 @@
   .home-hero-grid {
     gap: var(--space-xl);
   }
+
+  .about-intro-grid {
+    gap: 35px;
+  }
+
+  .quality-layout {
+    gap: 35px;
+  }
+
+  .values-grid,
+  .approach-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
+/* Mobile devices */
 @media (max-width: 767px) {
   :root {
     --section-spacing: 55px;
@@ -22,6 +43,7 @@
     width: min(100% - 30px, var(--container-width));
   }
 
+  /* Header */
   .header-container {
     min-height: 70px;
     flex-direction: column;
@@ -37,6 +59,7 @@
     gap: 10px 18px;
   }
 
+  /* Footer */
   .footer-container {
     grid-template-columns: 1fr;
   }
@@ -47,17 +70,62 @@
     text-align: center;
   }
 
+  /* General layouts */
   .hero-grid,
   .home-hero-grid,
   .laboratory-approach-grid,
-  .home-intro-grid {
+  .home-intro-grid,
+  .about-intro-grid,
+  .quality-layout {
     grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 35px;
   }
 
   .home-intro {
     text-align: center;
   }
 
+  /* About page images */
+  .about-hero-image,
+  .about-hero-image img {
+    height: 320px;
+    min-height: 320px;
+  }
+
+  .about-intro-image {
+    height: 280px;
+  }
+
+  .quality-image {
+    height: 250px;
+  }
+
+  .approach-feature-image {
+    height: 250px;
+  }
+
+  .about-floating-card {
+    left: 12px;
+    bottom: -18px;
+    max-width: 270px;
+  }
+
+  /* About page cards */
+  .values-grid,
+  .approach-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .value-card .card-body,
+  .approach-card-content {
+    padding: 20px;
+  }
+
+  /* Workflow */
   .workflow-canvas {
     aspect-ratio: 4 / 3;
     max-height: 480px;
@@ -71,7 +139,73 @@
     padding: 14px 16px;
   }
 
+  /* Contact */
   .contact-map-placeholder {
     padding: 24px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 540px) {
+  .values-grid,
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-image-wrapper {
+    height: 220px;
+    aspect-ratio: auto;
+  }
+
+  .about-hero-image,
+  .about-hero-image img {
+    height: 260px;
+    min-height: 260px;
+  }
+
+  .about-image-overlay {
+    padding: 55px 20px 20px;
+  }
+
+  .about-image-overlay strong {
+    font-size: 19px;
+  }
+
+  .about-intro-image {
+    height: 230px;
+  }
+
+  .quality-image {
+    height: 210px;
+  }
+
+  .approach-feature-image {
+    height: 210px;
+  }
+
+  .about-floating-card {
+    max-width: calc(100% - 24px);
+    padding: 12px;
+  }
+
+  .about-hero-image {
+    margin-bottom: 15px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .about-page img,
+  .value-card,
+  .approach-card,
+  .value-image-card {
+    transition: none;
+  }
+
+  .about-page img:hover,
+  .value-card:hover,
+  .approach-card:hover,
+  .value-image-card:hover {
+    transform: none;
   }
 }

@@ -1,4 +1,3 @@
-
 import SEO from "../components/SEO";
 import { PAGE_META } from "../data/pageMeta";
 import { approachSteps, values } from "../data/aboutContent";
@@ -12,6 +11,14 @@ const commitments = [
   "Clear customer communication",
 ];
 
+const laboratoryImages = {
+  hero: "/images/about/hero.avif",
+  introduction: "/images/about/introduction.avif",
+  quality: "/images/about/quality.avif",
+  microscope: "/images/about/microscope.avif",
+  samples: "/images/about/sample.avif",
+};
+
 export default function About() {
   return (
     <main className="about-page">
@@ -22,7 +29,7 @@ export default function About() {
         ogImage={meta.ogImage}
       />
 
-      {/* 1. About hero */}
+      {/* 1. About Hero */}
       <section className="hero about-hero" id="about-hero">
         <div className="container hero-grid">
           <div className="hero-content">
@@ -37,9 +44,8 @@ export default function About() {
             </h1>
 
             <p className="hero-subtitle">
-              Discover Hi-Fi Diagnostic and our commitment to
-              professional blood testing and pathology laboratory
-              services.
+              Discover Hi-Fi Diagnostic and our commitment to professional blood
+              testing and pathology laboratory services.
             </p>
 
             <a className="btn btn-primary" href="/contact">
@@ -48,160 +54,176 @@ export default function About() {
           </div>
 
           <div className="about-hero-visual">
-            <div className="about-visual-card">
-              <div className="about-visual-icon">✚</div>
-              <span>Hi-Fi Diagnostic</span>
-              <strong>Laboratory Services</strong>
-              <p>
-                Supporting informed healthcare decisions
-                through laboratory testing.
-              </p>
-              <div className="about-visual-decoration" />
+            <div className="about-hero-image">
+              <img
+                src={laboratoryImages.hero}
+                alt="Professional clinical diagnostic laboratory"
+                fetchPriority="high"
+              />
+
+              <div className="about-image-overlay">
+                <span>Hi-Fi Diagnostic</span>
+                <strong>Professional Laboratory Services</strong>
+              </div>
             </div>
+
+            {/* <div className="about-floating-card">
+              <span className="floating-icon">✚</span>
+              <div>
+                <strong>Diagnostic Care</strong>
+                <p>Supporting informed healthcare decisions</p>
+              </div> */}
+            {/* </div> */}
           </div>
         </div>
       </section>
 
-      {/* 2. Laboratory introduction */}
+      {/* 2. Laboratory Introduction */}
       <section
         className="section laboratory-introduction"
         id="laboratory-introduction"
       >
         <div className="container">
           <div className="about-intro-grid">
-            <div>
-              <span className="section-eyebrow">
-                Who We Are
-              </span>
-
-              <h2>
-                About Hi-Fi Diagnostic
-              </h2>
+            <div className="about-intro-image">
+              <img
+                src={laboratoryImages.introduction}
+                alt="Modern laboratory environment"
+                loading="lazy"
+              />
             </div>
 
-            <div>
+            <div className="about-intro-content">
+              <span className="section-eyebrow">Who We Are</span>
+
+              <h2>About Hi-Fi Diagnostic</h2>
+
               <p>
-                Hi-Fi Diagnostic is a blood testing and pathology
-                laboratory. We support customers with laboratory
-                services and clear information about our processes.
+                Hi-Fi Diagnostic is a blood testing and pathology laboratory. We
+                support customers with laboratory services and clear information
+                about our processes.
               </p>
 
               <p>
-                Our focus is on professional service, responsible
-                sample handling, and clear communication throughout
-                the laboratory process.
+                Our focus is on professional service, responsible sample
+                handling, and clear communication throughout the laboratory
+                process.
               </p>
+
+              <a href="/contact" className="text-link">
+                Learn More About Our Services →
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. Mission and vision */}
-      <section
-        className="section mission-vision"
-        id="mission-vision"
-      >
+      {/* 3. Mission and Vision */}
+      <section className="section mission-vision" id="mission-vision">
         <div className="container">
           <div className="section-head">
-            <span className="section-eyebrow">
-              Our Purpose
-            </span>
+            <span className="section-eyebrow">Our Purpose</span>
+
             <h2>Mission and Vision</h2>
-            <p>
-              The principles that guide our laboratory services.
-            </p>
+
+            <p>The principles that guide our laboratory services.</p>
           </div>
 
           <div className="mission-vision-grid">
             <article className="card card-body purpose-card">
               <span className="purpose-icon">◎</span>
+
               <h3>Our Mission</h3>
+
               <p>
-                To provide reliable laboratory services that
-                support customers.
+                To provide reliable laboratory services that support customers
+                through professional processes and clear communication.
               </p>
-              <span className="placeholder-note">
-                Draft statement — confirm with laboratory
-                before publication.
-              </span>
             </article>
 
             <article className="card card-body purpose-card">
               <span className="purpose-icon">◇</span>
+
               <h3>Our Vision</h3>
+
               <p>
-                To be a laboratory of choice through professional
-                service, clear communication and reliable processes.
+                To be a laboratory of choice through professional service, clear
+                communication and reliable processes.
               </p>
-              <span className="placeholder-note">
-                Draft statement — confirm with laboratory
-                before publication.
-              </span>
             </article>
           </div>
         </div>
       </section>
 
-      {/* 4. Values */}
-      <section
-        className="section values-section"
-        id="values"
-      >
+      {/* 4. Our Values */}
+      <section className="section values-section" id="values">
         <div className="container">
           <div className="section-head">
-            <span className="section-eyebrow">
-              What Guides Us
-            </span>
+            <span className="section-eyebrow">What Guides Us</span>
+
             <h2>Our Values</h2>
+
+            <p>
+              The standards and principles behind our approach to laboratory
+              services.
+            </p>
           </div>
 
           <div className="values-grid">
             {values.map((value, index) => (
               <article
                 key={value.id}
-                className="card card-body value-card"
+                className="card value-card value-image-card"
               >
-                <span className="value-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                <div className="value-image-wrapper">
+                  <img src={value.image} alt={value.imageAlt} loading="lazy" />
 
-                <h3>{value.title}</h3>
-                <p>{value.description}</p>
+                  <span className="value-number">
+                    {value.number || String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <div className="card-body value-card-content">
+                  <h3>{value.title}</h3>
+                  <p>{value.description}</p>
+
+                  <span className="value-card-link">
+                    Our Commitment
+                    <span aria-hidden="true">→</span>
+                  </span>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5. Quality commitment */}
-      <section
-        className="section quality-commitment"
-        id="quality-commitment"
-      >
+      {/* 5. Quality Commitment */}
+      <section className="section quality-commitment" id="quality-commitment">
         <div className="container">
           <div className="quality-layout">
-            <div>
-              <span className="section-eyebrow">
-                Our Commitment
-              </span>
+            <div className="quality-content">
+              <span className="section-eyebrow">Our Commitment</span>
 
-              <h2>
-                A Professional Approach to Laboratory Services
-              </h2>
+              <h2>A Professional Approach to Laboratory Services</h2>
 
               <p>
-                Hi-Fi Diagnostic is committed to reliable
-                laboratory processes and a professional approach
-                to sample handling.
+                Hi-Fi Diagnostic is committed to reliable laboratory processes
+                and a professional approach to sample handling.
               </p>
 
-              <span className="placeholder-note">
-                Confirm operational and quality claims with
-                laboratory management before publication.
-              </span>
+              <div className="quality-image">
+                <img
+                  src={laboratoryImages.quality}
+                  alt="Medical laboratory professional working with diagnostic samples"
+                  loading="lazy"
+                />
+              </div>
             </div>
 
             <div className="quality-card card card-body">
+              <span className="section-eyebrow">Quality Standards</span>
+
               <h3>Our Service Principles</h3>
 
               <ul className="quality-list">
@@ -212,72 +234,73 @@ export default function About() {
                   </li>
                 ))}
               </ul>
+
+              <img
+                className="quality-detail-image"
+                src={laboratoryImages.samples}
+                alt="Organized laboratory sample collection tubes"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. Laboratory approach */}
-      <section
-        className="section laboratory-approach"
-        id="laboratory-approach"
-      >
+      {/* 6. Laboratory Approach */}
+      <section className="section laboratory-approach" id="laboratory-approach">
         <div className="container">
           <div className="section-head">
-            <span className="section-eyebrow">
-              Laboratory Approach
-            </span>
+            <span className="section-eyebrow">Laboratory Approach</span>
 
             <h2>Understanding the Laboratory Process</h2>
 
             <p>
-              An educational overview of the journey of a
-              collected sample through laboratory processes.
+              An educational overview of the journey of a collected sample
+              through laboratory processes.
             </p>
           </div>
 
-          <div className="approach-grid">
-            {approachSteps.map((step, index) => (
-              <article
-                className="approach-card"
-                key={step.id}
-              >
-                <span className="approach-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+          <div className="approach-feature-image">
+            <img
+              src={laboratoryImages.microscope}
+              alt="Microscope used in laboratory sample analysis"
+              loading="lazy"
+            />
+          </div>
 
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
+          <div className="approach-grid">
+            {approachSteps.map((step) => (
+              <article className="approach-card" key={step.id}>
+                <div className="approach-card-image">
+                  <img src={step.image} alt={step.imageAlt} loading="lazy" />
+                </div>
+
+                <div className="approach-card-content">
+                  <span className="approach-number">{step.number}</span>
+
+                  <h3>{step.title}</h3>
+
+                  <p>{step.description}</p>
+                </div>
               </article>
             ))}
           </div>
 
           <p className="page-note">
-            This is an illustrative educational overview, not
-            a substitute for laboratory procedures or clinical
-            instructions.
+            This is an illustrative educational overview, not a substitute for
+            laboratory procedures or clinical instructions.
           </p>
         </div>
       </section>
 
       {/* 7. Contact CTA */}
-      <section
-        className="about-contact-cta"
-        id="about-contact-cta"
-      >
+      <section className="about-contact-cta" id="about-contact-cta">
         <div className="container">
-          <span className="hero-eyebrow">
-            Have Questions?
-          </span>
+          <span className="hero-eyebrow">Have Questions?</span>
 
-          <h2>
-            Get in Touch with Hi-Fi Diagnostic
-          </h2>
+          <h2>Get in Touch with Hi-Fi Diagnostic</h2>
 
-          <p>
-            Contact our team for information about our
-            laboratory services.
-          </p>
+          <p>Contact our team for information about our laboratory services.</p>
 
           <a className="btn btn-primary" href="/contact">
             Contact Us
